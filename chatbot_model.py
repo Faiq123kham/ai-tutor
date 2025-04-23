@@ -65,7 +65,7 @@ def get_response(question: str, history: Optional[List[dict]] = None) -> str:
     # Ensure the model can generate beyond the prompt by setting pad_token_id
     generated = chat_pipeline(
         prompt,
-        max_length=len(prompt.split()) + 50,
+        # max_length=len(prompt.split()) + 50,
         pad_token_id=chat_pipeline.tokenizer.eos_token_id
     )[0]['generated_text']
 
